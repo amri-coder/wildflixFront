@@ -17,6 +17,9 @@ import { PricingComponent } from './pricing/pricing.component';
     FooterComponent,
     PricingComponent
   ],
+  exports: [
+    FooterComponent
+  ],
   imports: [
     CommonModule,
     OtherPagesRoutingModule

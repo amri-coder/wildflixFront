@@ -3,10 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ServicesRoutingModule } from './services-routing.module';
 import { HeadingComponent } from './heading/heading.component';
-import { BodyAllUsersComponent } from './body-all-users/body-all-users.component';
-import { BodyOnlyMembersComponent } from './body-only-members/body-only-members.component';
-import { BodyTrialPeriodComponent } from './body-trial-period/body-trial-period.component';
+import { BodyAllUsersComponent } from './body/body-all-users/body-all-users.component';
+import { BodyOnlyMembersComponent } from './body/body-only-members/body-only-members.component';
+import { BodyTrialPeriodComponent } from './body/body-trial-period/body-trial-period.component';
 import { FooterAllComponent } from './footer-all/footer-all.component';
+import { DetailsOnlyMembersComponent } from './details/details-only-members/details-only-members.component';
+import { DetailsAllUsersComponent } from './details/details-all-users/details-all-users.component';
+import { DetailsTrialPeriodComponent } from './details/details-trial-period/details-trial-period.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { FooterAllComponent } from './footer-all/footer-all.component';
         BodyAllUsersComponent,
         BodyOnlyMembersComponent,
         BodyTrialPeriodComponent,
-        FooterAllComponent
+        FooterAllComponent,
+        DetailsOnlyMembersComponent,
+        DetailsAllUsersComponent,
+        DetailsTrialPeriodComponent
     ],
   exports: [
     HeadingComponent,

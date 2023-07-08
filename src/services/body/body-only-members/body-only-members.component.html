@@ -1,0 +1,12 @@
+<h1> WildFlix Cinéma en construction</h1>
+
+<section>
+  <form>
+    <input type="text" placeholder="Filtrer par date de sortie">
+    <button class="primary" type="button">Recherche</button>
+  </form>
+</section>
+
+<section>
+  <app-details-only-members *ngFor="let detailsOnlyMembers of detailsOnlyMembersList" [detailsOnlyMembers]="detailsOnlyMembers"></app-details-only-members>
+</section>
