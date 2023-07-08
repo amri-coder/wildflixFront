@@ -13,6 +13,9 @@ import { VideosTrialPeriodComponent } from './videos-trial-period/videos-trial-p
     VideosOnlyMembersComponent,
     VideosTrialPeriodComponent
   ],
+  exports: [
+    VideosAllUsersComponent
+  ],
   imports: [
     CommonModule,
     PagesRoutingModule
