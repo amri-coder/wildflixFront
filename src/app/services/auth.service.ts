@@ -49,6 +49,9 @@ export class AuthService {
   register(body: any): Observable<HttpResponse<any>> {
     return this.http.post<any>(this.url + 'auth/sign-up-user', body);
   }
+  registerAdmin(body: any): Observable<HttpResponse<any>> {
+    return this.http.post<any>(this.url + 'auth/sign-up-admin', body);
+  }
 
   verifyEmail(body: any, email: string): Observable<any> {
     return this.http.post<any>(

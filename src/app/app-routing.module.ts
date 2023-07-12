@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { EmailConfirmationComponent } from './pages/email-confirmation/email-confirmation.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ResetPasswordRequestComponent } from './pages/reset-password-request/reset-password-request.component';
+import { RegisterAdminComponent } from './register-admin/register-admin.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'register-admin',
+    component: RegisterAdminComponent,
   },
   {
     path: 'email-confirmation/:email',

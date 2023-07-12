@@ -12,6 +12,7 @@ import { ResetPasswordRequestComponent } from './pages/reset-password-request/re
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { EmailConfirmationComponent } from './pages/email-confirmation/email-confirmation.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RegisterAdminComponent } from './register-admin/register-admin.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ResetPasswordRequestComponent,
     ResetPasswordComponent,
     EmailConfirmationComponent,
+    RegisterAdminComponent,
   ],
   imports: [
     BrowserModule,
