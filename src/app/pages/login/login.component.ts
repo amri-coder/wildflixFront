@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
     this.errorMsg = '';
     this.authService.login(this.loginForm.value).subscribe(
       (reponse: any) => {
-        console.log('hello !');
         this.authService.setJwt(reponse.jwt);
         this.authService.setEmail(reponse.email);
         this.authService.setRoles(reponse.roles);
@@ -37,7 +36,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home']);
       },
       (error) => {
-        console.log('errrrr');
         this.errorMsg = error.error.message;
       }
     );

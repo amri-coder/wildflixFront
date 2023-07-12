@@ -14,9 +14,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.authService.userMe().subscribe((response) => {
-      console.log(response);
-      console.log(response.email);
-      console.log('cocc');
       this.email = response.email;
       this.firstname = response.firstname;
       this.lastname = response.lastname;
