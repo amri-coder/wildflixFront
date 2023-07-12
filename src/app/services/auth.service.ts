@@ -58,6 +58,10 @@ export class AuthService {
     return this.http.post<any>(this.url + 'auth/login', body);
   }
 
+  userMe(): Observable<any> {
+    return this.http.get<any>(this.url + 'users/me');
+  }
+
   resetPasswordRequest(body: any): Observable<any> {
     return this.http.post<any>(this.url + 'auth/reset-password-request', body);
   }

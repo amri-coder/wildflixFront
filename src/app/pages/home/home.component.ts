@@ -13,8 +13,13 @@ export class HomeComponent implements OnInit {
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
-    this.email = this.authService.getEmail();
-    this.firstname = this.authService.getFirstname();
-    this.lastname = this.authService.getLastname();
+    this.authService.userMe().subscribe((response) => {
+      console.log(response);
+      console.log(response.email);
+      console.log('cocc');
+      this.email = response.email;
+      this.firstname = response.firstname;
+      this.lastname = response.lastname;
+    });
   }
 }
