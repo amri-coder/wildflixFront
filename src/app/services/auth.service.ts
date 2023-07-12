@@ -32,10 +32,26 @@ export class AuthService {
     return localStorage.getItem('roles');
   }
 
+  getFirstname() {
+    return localStorage.getItem('firstname') || '';
+  }
+  setFirstname(firstname: string) {
+    localStorage.setItem('firstname', firstname);
+  }
+
+  getLastname() {
+    return localStorage.getItem('lastname') || '';
+  }
+  setLastname(lastname: string) {
+    localStorage.setItem('lastname', lastname);
+  }
+
   logout() {
     localStorage.removeItem('jwt');
     localStorage.removeItem('email');
     localStorage.removeItem('roles');
+    localStorage.removeItem('firstname');
+    localStorage.removeItem('lastname');
   }
 
   login(body: any): Observable<HttpResponse<any>> {
