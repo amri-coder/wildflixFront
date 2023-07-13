@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-listing',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListingComponent implements OnInit {
 
-  constructor() { }
+  email: string = '';
+  firstname: string = '';
+  lastname: string = '';
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.authService.userMe().subscribe((response) => {
+      this.email = response.email;
+      this.firstname = response.firstname;
+      this.lastname = response.lastname;
+    });
   }
 
 }
