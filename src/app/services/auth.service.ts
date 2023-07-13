@@ -32,14 +32,34 @@ export class AuthService {
     return localStorage.getItem('roles');
   }
 
+  getFirstname() {
+    return localStorage.getItem('firstname') || '';
+  }
+  setFirstname(firstname: string) {
+    localStorage.setItem('firstname', firstname);
+  }
+
+  getLastname() {
+    return localStorage.getItem('lastname') || '';
+  }
+  setLastname(lastname: string) {
+    localStorage.setItem('lastname', lastname);
+  }
+
   logout() {
     localStorage.removeItem('jwt');
     localStorage.removeItem('email');
     localStorage.removeItem('roles');
+    localStorage.removeItem('firstname');
+    localStorage.removeItem('lastname');
   }
 
   login(body: any): Observable<HttpResponse<any>> {
     return this.http.post<any>(this.url + 'auth/login', body);
+  }
+
+  userMe(): Observable<any> {
+    return this.http.get<any>(this.url + 'users/me');
   }
 
   resetPasswordRequest(body: any): Observable<any> {
@@ -48,6 +68,9 @@ export class AuthService {
 
   register(body: any): Observable<HttpResponse<any>> {
     return this.http.post<any>(this.url + 'auth/sign-up-user', body);
+  }
+  registerAdmin(body: any): Observable<HttpResponse<any>> {
+    return this.http.post<any>(this.url + 'auth/sign-up-admin', body);
   }
 
   verifyEmail(body: any, email: string): Observable<any> {
