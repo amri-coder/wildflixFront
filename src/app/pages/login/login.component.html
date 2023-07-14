@@ -4,6 +4,10 @@
         <div class="col-lg-4">
 
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="lead">
+                <p class="text-right accueil">
+                    <a routerLink="">Accueil</a>
+                </p>
+
                 <div class="text-center mb-3">
                     <img src="../../../assets/images/logo.png">
                 </div>
@@ -40,7 +44,10 @@
                 </div>
 
                 <p class="text-left pt-4">
-                    <a routerLink="/forgotten-password">Forgot Password !</a>
+                    <a routerLink="/forgotten-password">Mot de passe oublié !</a>
+                </p>
+                <p class="text-left pt-4">
+                    <a routerLink="/login-register">Inscription</a>
                 </p>
 
             </form>
