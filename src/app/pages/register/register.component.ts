@@ -12,6 +12,7 @@ import { AuthService } from "src/app/services/auth.service";
 export class RegisterComponent implements OnInit {
     showPassword: boolean = false;
     errorMsg: String = "";
+    submitted: boolean = false;
 
     constructor(
         private fb: FormBuilder,
@@ -21,13 +22,18 @@ export class RegisterComponent implements OnInit {
     ngOnInit(): void {}
 
     registerForm: FormGroup = this.fb.group({
-        firstname: ["", [Validators.required]],
-        lastname: ["", [Validators.required]],
-        email: ["", [Validators.required]],
-        password: ["", [Validators.required]],
+        firstname: ["", [Validators.required, Validators.min(2)]],
+        lastname: ["", [Validators.required, Validators.min(2)]],
+        email: ["", [Validators.required, Validators.email]],
+        password: ["", [Validators.required, Validators.min(3)]],
     });
 
+    get f() {
+        return this.registerForm.controls;
+    }
+
     onSubmit() {
+        this.submitted = true;
         this.errorMsg = "";
         this.authService
             .register(this.registerForm.value)
