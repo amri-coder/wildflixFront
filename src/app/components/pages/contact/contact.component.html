@@ -58,6 +58,8 @@
             <div class="contact-form">
                 <span>ENVOYER UN MESSAGE</span>
                 <h2>Nous contacter</h2>
+                <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg }}</div>
+                <div *ngIf="confirmMsg" class="alert alert-success">{{confirmMsg }}</div>
 
                 <form id="contactForm" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                     <div class="row">
@@ -65,7 +67,7 @@
                             <div class="form-group">
                                 <i class='bx bx-user'></i>
                                 <input type="text" name="name" id="name" formControlName="name" class="form-control"
-                                    required placeholder="Votre nom *"
+                                    required placeholder="Votre nom *" [(ngModel)]="name"
                                     [ngClass]="{'is-invalid':(f.name.invalid && submitted)||(f.name.touched && f.name.invalid)}">
                                 <div *ngIf="submitted || f.name.touched" class="invalid-feedback">
                                     <div *ngIf="f.name.errors?.['required']">Ce champs est requis !</div>
@@ -77,7 +79,7 @@
                             <div class="form-group">
                                 <i class='bx bx-user'></i>
                                 <input type="email" name="email" id="email" formControlName="email" class="form-control"
-                                    required placeholder="Votre courriel *"
+                                    required placeholder="Votre courriel *" [(ngModel)]="email"
                                     [ngClass]="{'is-invalid':(f.email.invalid && submitted)||(f.email.touched && f.email.invalid)}">
                                 <div *ngIf="submitted || f.email.touched" class="invalid-feedback">
                                     <div *ngIf="f.email.errors?.['required']">Ce champs est requis !</div>
@@ -89,7 +91,7 @@
                             <div class="form-group">
                                 <i class='bx bx-phone'></i>
                                 <input type="text" name="phone_number" formControlName="phone_number" id="phone_number"
-                                    required class="form-control" placeholder="Votre téléphone">
+                                    required class="form-control" placeholder="Votre téléphone" [(ngModel)]="phone">
                             </div>
                         </div>
 
@@ -97,7 +99,7 @@
                             <div class="form-group">
                                 <i class='bx bx-file'></i>
                                 <input type="text" name="msg_subject" formControlName="msg_subject" id="msg_subject"
-                                    class="form-control" required placeholder="Votre sujet">
+                                    class="form-control" required placeholder="Votre sujet" [(ngModel)]="subject">
                             </div>
                         </div>
 
@@ -105,7 +107,7 @@
                             <div class="form-group">
                                 <i class='bx bx-envelope'></i>
                                 <textarea name="message" class="form-control" formControlName="message" id="message"
-                                    cols="30" rows="8" required placeholder="Votre Message *"
+                                    cols="30" rows="8" required placeholder="Votre Message *" [(ngModel)]="message"
                                     [ngClass]="{'is-invalid':(f.message.invalid && submitted)||(f.message.touched && f.message.invalid)}">
                                     </textarea>
                                 <div *ngIf="submitted || f.message.touched" class="invalid-feedback">
