@@ -80,14 +80,11 @@ const routes: Routes = [
         path: "reset-password/:token",
         component: ResetPasswordComponent,
     },
-    {
-        path: "home",
-        component: HomeComponent,
-    },
-    {
-        path: "**",
-        component: HomeComponent,
-    },
+    // {
+    //     path: "home",
+    //     component: HomeComponent,
+    // },
+    { path: "home", component: HomeOneComponent },
     // Here add new pages component
 
     { path: "**", component: ErrorComponent }, // This line will remain down from the whole pages component list
