@@ -33,23 +33,26 @@
 <div class="row"
     style="display: flex; justify-content: center; justify-items: left; min-height: 300px; margin-top: 100px;">
 
-    <div *ngFor="let video of videos" style=" max-width: 360px;" class="col-sm-6 col-md-4 col-lg-4">
+    <div *ngFor="let video of videos" style="max-width: 360px; margin-bottom: 20px;" class="col-sm-6 col-md-4 col-lg-4">
 
         <div class="box">
-            <div class="img-box">
-                <!-- <a><img alt="img" src={{video.url}}></a> -->
-                <video controls style="max-width: 300px;">
-                    <source [src]="video.url" type="video/mp4">
-                    Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
-                </video>
+            <div class="row">
+                <div class="col-md-12">
+                    <video controls style="width: 100%;">
+                        <source [src]="video.url" type="video/mp4">
+                        Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
+                    </video>
+                </div>
             </div>
-            <i class="flaticon-like"></i>
+            <div class="row">
+                <div class="col-md-3"><i class="flaticon-like"></i></div>
+                <div class="col-md-9" style="text-align: right; font-size: 12px;">{{video.releaseDate}}</div>
+            </div>
             <div class="detail-box">
-                <h5>
+                <h6>
                     {{video.title}}
-                </h5>
+                </h6>
             </div>
-
         </div>
     </div>
 

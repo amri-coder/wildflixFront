@@ -41,9 +41,8 @@
                                                 <div class="col-lg-12 ">
                                                     <div class="form-group">
                                                         <i class='bx bx-file'></i>
-                                                        <input type="date" formControlName="release_date"
-                                                            name="release_date" id="release_date" class="form-control"
-                                                            required
+                                                        <input type="date" formControlName="releaseDate"
+                                                            id="release_date" class="form-control" required
                                                             data-error="Veuillez saisir la date de réalisation du film"
                                                             placeholder="Date de réalisation du film">
                                                     </div>
@@ -58,44 +57,51 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-12 ">
-                                                    <div class="form-group">
+                                                    <div class="form-group" style="float: left;">
                                                         <div class="facilities-list">
-                                                            <h3 class="facilities-title"> Vidéo privée ou publique?</h3>
+                                                            <h3 class="facilities-title">Vidéo privée ou publique?</h3>
                                                             <!-- <i class='bx bx-file'></i>
                                                         <label for="isPrivate" class="form-control" style=""> Veuillez
                                                             préciser
                                                             si la vidéo est privée ou publique </label> -->
-                                                            <div>
-                                                                <input id="isPrivate" type="radio" value="true"
-                                                                    formControlName="private">
-                                                                <label for="private"> Privée</label>
-                                                            </div>
-                                                            <div>
-                                                                <input id="isPrivate" type="radio" value="false"
-                                                                    formControlName="private">
-                                                                <label for="public"> Publique </label>
+                                                            <div style="float: left;">
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" id="isPrivate"
+                                                                        type="radio" value="true"
+                                                                        formControlName="private">
+                                                                    <label class="form-check-label"
+                                                                        for="private">&nbsp;Privée</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" id="isPrivate"
+                                                                        type="radio" value="false"
+                                                                        formControlName="private">
+                                                                    <label class="form-check-label"
+                                                                        for="public">&nbsp;Publique</label>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
                                                 <div class="col-lg-12 ">
-                                                    <div class="form-group">
+                                                    <div class="form-group" style="float: left;">
                                                         <div class="facilities-list">
-                                                            <h3 class="facilities-title"> Catégories</h3>
+                                                            <h3 class="facilities-title">Catégories</h3>
                                                             <!-- <i class='bx bx-file'></i>
                                                             <input type="text" name="url" id="url" class="form-control"
                                                                 required
                                                                 placeholder="Veuillez sélectionner une ou plusieurs catégories"
                                                                 disabled> -->
 
-                                                            <div *ngFor="let category of categories" class="col-md-12">
-                                                                <label>
-                                                                    <input formArrayName="categories"
+                                                            <div class="form-check" *ngFor="let category of categories"
+                                                                class="col-md-12">
+                                                                <label class="form-check-label"><input
+                                                                        class="form-check-input"
+                                                                        formArrayName="categories"
                                                                         (change)="onCheckboxChange($event)"
-                                                                        type="checkbox" [value]="category.id">
-                                                                    {{category.name}}
-                                                                </label>
+                                                                        type="checkbox"
+                                                                        [value]="category.id">&nbsp;&nbsp;{{category.name}}</label>
                                                             </div>
                                                         </div>
 

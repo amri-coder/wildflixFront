@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/interfaces/category.interface';
@@ -26,9 +26,9 @@ export class VideosComponent {
       title: ['', [Validators.required]],
       description: ['', [Validators.required]],
       url: ['', [Validators.required]],
-      release_date: ['', [Validators.required]],
+      releaseDate: ['', [Validators.required]],
       categories: new FormArray([]),
-      private: new FormControl('', Validators.required),
+      private: [false, [Validators.required]],
     });
   }
 
@@ -48,16 +48,15 @@ export class VideosComponent {
     title: ['', [Validators.required]],
     description: ['', [Validators.required]],
     url: ['', [Validators.required]],
-    release_date: ['', [Validators.required]],
+    releaseDate: ['', [Validators.required]],
     categories: new FormArray([]),
-    private: new FormControl('', Validators.required),
+    private: [false, [Validators.required]],
   });
 
   onSubmit(): void {
     this.errorMsg = '';
-    let objectList = this.videoForm.value.categories.map(id => ({ id }));
+    let objectList = this.videoForm.value.categories.map((id: Number) => ({ id }));
     this.videoForm.value.categories = objectList;
-    //console.log(this.videoForm.value);
     this.vidéoService
       .addVideo(this.videoForm.value)
       .subscribe((response: any) => {
