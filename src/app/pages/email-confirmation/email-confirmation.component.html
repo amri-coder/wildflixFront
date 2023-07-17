@@ -1,36 +1,36 @@
 <div class="container">
-  <div class="row justify-content-center">
+    <div class="row justify-content-center">
 
-    <div class="col-lg-4">
+        <div class="col-lg-4">
 
-      <form [formGroup]="emailConfirmForm" (ngSubmit)="onSubmit()" class="lead">
-        <div class="text-center mb-3">
-          <img src="../../../assets/images/logo.png">
+            <form [formGroup]="emailConfirmForm" (ngSubmit)="onSubmit()" class="lead">
+                <div class="text-center mb-3">
+                    <img src="../../../assets/images/logo.png">
+                </div>
+                <h4 class="text-center">Email Confirmation</h4>
+
+                <p>Veuillez entrer le code que vous avez reçu sur : <span class="text-danger">{{email}}</span></p>
+
+                <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg }}</div>
+                <div *ngIf="confirmMsg" class="alert alert-success">{{confirmMsg }}</div>
+
+                <div class="form-group">
+                    <label class="sr-only" for="">Code</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"> Code</div>
+                        </div>
+                        <input type="text" formControlName="code" class="form-control" id="email">
+                    </div>
+                </div>
+
+
+                <div>
+                    <button type="submit" class="btn btn-outline-success mt-2">Envoyer !</button>
+                </div>
+
+            </form>
+
         </div>
-        <h4 class="text-center">Email Confirmation</h4>
-
-        <p>Please enter the code you received on : <span class="text-danger">{{email}}</span></p>
-
-        <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg }}</div>
-        <div *ngIf="confirmMsg" class="alert alert-success">{{confirmMsg }}</div>
-
-        <div class="form-group">
-          <label class="sr-only" for="">Code</label>
-          <div class="input-group mb-2">
-            <div class="input-group-prepend">
-              <div class="input-group-text"> Code</div>
-            </div>
-            <input type="text" formControlName="code" class="form-control" id="email">
-          </div>
-        </div>
-
-
-        <div>
-          <button type="submit" class="btn btn-outline-success mt-2">Send !</button>
-        </div>
-
-      </form>
-
     </div>
-  </div>
 </div>

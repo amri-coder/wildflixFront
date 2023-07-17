@@ -45,6 +45,10 @@ export class ResetPasswordComponent implements OnInit {
             .subscribe(
                 (response: any) => {
                     this.confirmMsg = response.message;
+
+                    setTimeout(() => {
+                        this.router.navigate(["login"]);
+                    }, 3000); // Délai de 3 secondes (3000 millisecondes)
                 },
                 (error) => {
                     if (error.status == 404) {

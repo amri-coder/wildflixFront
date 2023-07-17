@@ -90,4 +90,11 @@ export class AuthService {
     sendContactForm(body: any): Observable<any> {
         return this.http.post(this.url + "api/contact", body);
     }
+
+    addVideoToFavorite(body: any): Observable<any> {
+        return this.http.post(this.url + "users/addVideoToFavorite", body);
+    }
+    removeVideoFRomFavorite(body: any): Observable<any> {
+        return this.http.post(this.url + "users/removeVideoFromFavorite", body);
+    }
 }
