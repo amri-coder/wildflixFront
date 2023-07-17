@@ -12,7 +12,6 @@ import { HomeThreeComponent } from "./components/pages/home-three/home-three.com
 import { AboutComponent } from "./components/pages/about/about.component";
 import { TeamComponent } from "./components/pages/team/team.component";
 import { PricingComponent } from "./components/pages/pricing/pricing.component";
-import { CategoryComponent } from "./components/pages/category/category.component";
 import { ShopComponent } from "./components/pages/shop/shop.component";
 import { CartComponent } from "./components/pages/cart/cart.component";
 import { CheckoutComponent } from "./components/pages/checkout/checkout.component";
@@ -31,6 +30,7 @@ import { BlogDetailsComponent } from "./components/pages/blog-details/blog-detai
 import { ContactComponent } from "./components/pages/contact/contact.component";
 import { VideosComponent } from "./pages/videos/videos.component";
 import { AllVideosComponent } from "./pages/all-videos/all-videos.component";
+import { CategoryComponent } from "./pages/category/category.component";
 
 const routes: Routes = [
     { path: "", component: HomeOneComponent },
@@ -97,4 +97,4 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -26,7 +26,6 @@ import { FooterStyleTwoComponent } from "./components/common/footer-style-two/fo
 import { AboutComponent } from "./components/pages/about/about.component";
 import { TeamComponent } from "./components/pages/team/team.component";
 import { PricingComponent } from "./components/pages/pricing/pricing.component";
-import { CategoryComponent } from "./components/pages/category/category.component";
 import { FaqComponent } from "./components/pages/faq/faq.component";
 import { TestimonialsComponent } from "./components/pages/testimonials/testimonials.component";
 import { ErrorComponent } from "./components/pages/error/error.component";
@@ -46,6 +45,7 @@ import { ContactComponent } from "./components/pages/contact/contact.component";
 import { VideosComponent } from './pages/videos/videos.component';
 import { NgSelectModule } from "@ng-select/ng-select";
 import { AllVideosComponent } from './pages/all-videos/all-videos.component';
+import { CategoryComponent } from "./pages/category/category.component";
 
 @NgModule({
     declarations: [
