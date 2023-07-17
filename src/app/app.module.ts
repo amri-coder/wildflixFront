@@ -44,6 +44,9 @@ import { BlogComponent } from "./components/pages/blog/blog.component";
 import { BlogDetailsComponent } from "./components/pages/blog-details/blog-details.component";
 import { ContactComponent } from "./components/pages/contact/contact.component";
 import { CookieComponent } from './cookie/cookie.component';
+import { VideosComponent } from './pages/videos/videos.component';
+import { NgSelectModule } from "@ng-select/ng-select";
+import { AllVideosComponent } from './pages/all-videos/all-videos.component';
 
 @NgModule({
     declarations: [
@@ -84,6 +87,8 @@ import { CookieComponent } from './cookie/cookie.component';
         BlogDetailsComponent,
         ContactComponent,
         CookieComponent,
+        VideosComponent,
+        AllVideosComponent,
     ],
     imports: [
         BrowserModule,
@@ -92,10 +97,11 @@ import { CookieComponent } from './cookie/cookie.component';
         RouterModule,
         HttpClientModule,
         FontAwesomeModule,
+        NgSelectModule
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     ],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

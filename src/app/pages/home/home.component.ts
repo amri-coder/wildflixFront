@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -10,7 +11,7 @@ export class HomeComponent implements OnInit {
   email: string = '';
   firstname: string = '';
   lastname: string = '';
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.authService.userMe().subscribe((response) => {
@@ -18,5 +19,9 @@ export class HomeComponent implements OnInit {
       this.firstname = response.firstname;
       this.lastname = response.lastname;
     });
+  }
+  Onclick() {
+    this.authService.logout();
+    this.router.navigate(['home']);
   }
 }
