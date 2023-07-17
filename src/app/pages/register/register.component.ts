@@ -35,6 +35,8 @@ export class RegisterComponent implements OnInit {
         this.router.navigate(['email-confirmation', response.email]);
       });
   }
+
+
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }

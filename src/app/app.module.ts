@@ -46,6 +46,7 @@ import { ContactComponent } from "./components/pages/contact/contact.component";
 import { VideosComponent } from './pages/videos/videos.component';
 import { NgSelectModule } from "@ng-select/ng-select";
 import { AllVideosComponent } from './pages/all-videos/all-videos.component';
+import { CookieComponent } from "./cookie/cookie.component";
 
 @NgModule({
     declarations: [
@@ -87,6 +88,7 @@ import { AllVideosComponent } from './pages/all-videos/all-videos.component';
         ContactComponent,
         VideosComponent,
         AllVideosComponent,
+        CookieComponent
     ],
     imports: [
         BrowserModule,
