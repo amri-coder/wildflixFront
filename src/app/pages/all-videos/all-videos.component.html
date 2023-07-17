@@ -1,0 +1,62 @@
+<!-- <div *ngFor="let video of videos">
+    <h2>{{ video.title }}</h2>
+    <p>{{ video.description }}</p>
+</div> -->
+
+<app-navbar-style-one></app-navbar-style-one>
+
+<div class="inner-banner inner-bg3">
+    <div class="container">
+        <div class="inner-banner-title text-center">
+            <h3>Espace abonné</h3>
+            <p>Nous sommes ravis de la confiance que vous nous accordez.</p>
+        </div>
+
+        <div class="banner-list">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-md-7">
+                    <ul class="list">
+                        <li><a href="index.html">Abonnés</a></li>
+                        <li><i class='bx bx-chevron-right'></i></li>
+                        <li class="active">Membre</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-6 col-md-5">
+                    <p>Heureux de vous revoir <span class="text-danger">{{firstname}} {{lastname}}</span><a
+                            routerLink="/"></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row"
+    style="display: flex; justify-content: center; justify-items: left; min-height: 300px; margin-top: 100px;">
+
+    <div *ngFor="let video of videos" style="max-width: 360px; margin-bottom: 20px;" class="col-sm-6 col-md-4 col-lg-4">
+
+        <div class="box">
+            <div class="row">
+                <div class="col-md-12">
+                    <video controls style="width: 100%;">
+                        <source [src]="video.url" type="video/mp4">
+                        Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
+                    </video>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3"><i class="flaticon-like"></i></div>
+                <div class="col-md-9" style="text-align: right; font-size: 12px;">{{video.releaseDate}}</div>
+            </div>
+            <div class="detail-box">
+                <h6>
+                    {{video.title}}
+                </h6>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<app-footer-style-one></app-footer-style-one>

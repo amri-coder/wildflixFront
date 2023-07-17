@@ -43,6 +43,9 @@ import { ListingDetailsComponent } from "./components/pages/listing-details/list
 import { BlogComponent } from "./components/pages/blog/blog.component";
 import { BlogDetailsComponent } from "./components/pages/blog-details/blog-details.component";
 import { ContactComponent } from "./components/pages/contact/contact.component";
+import { VideosComponent } from './pages/videos/videos.component';
+import { NgSelectModule } from "@ng-select/ng-select";
+import { AllVideosComponent } from './pages/all-videos/all-videos.component';
 
 @NgModule({
     declarations: [
@@ -82,6 +85,8 @@ import { ContactComponent } from "./components/pages/contact/contact.component";
         BlogComponent,
         BlogDetailsComponent,
         ContactComponent,
+        VideosComponent,
+        AllVideosComponent,
     ],
     imports: [
         BrowserModule,
@@ -90,10 +95,11 @@ import { ContactComponent } from "./components/pages/contact/contact.component";
         RouterModule,
         HttpClientModule,
         FontAwesomeModule,
+        NgSelectModule
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     ],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

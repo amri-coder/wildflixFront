@@ -1,0 +1,133 @@
+<div class="user-area">
+    <div class="container-fluid m-0">
+        <div class="row align-items-center">
+            <div class="col-lg-7 col-xl-6  p-0">
+                <div class="user-img">
+                    <img src="assets/img/login-img.jpg" alt="Images">
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-xl-6">
+                <div class="user-section text-center">
+                    <div class="user-content">
+                        <h2>Ajouter <b>une vidéo</b></h2>
+                    </div>
+                    <div class="tab user-tab">
+                        <div class="tab_content current active">
+                            <div class="tabs_item current">
+                                <div class="user-all-form">
+                                    <div class="contact-form">
+
+                                        <form id="videoForm" [formGroup]="videoForm" (ngSubmit)="onSubmit()">
+                                            <div class="row">
+                                                <div class="col-lg-12 ">
+                                                    <div class="form-group">
+                                                        <i class='bx bx-file'></i>
+                                                        <input type="text" formControlName="title" name="title"
+                                                            id="title" class="form-control" required
+                                                            data-error="Veuillez saisir l'Intitulé du film"
+                                                            placeholder="Intitulé du film">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 ">
+                                                    <div class="form-group">
+                                                        <i class='bx bx-file'></i>
+                                                        <input type="text" formControlName="description"
+                                                            name="description" id="description" class="form-control"
+                                                            required data-error="Veuillez saisir la description du film"
+                                                            placeholder="Description du film">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 ">
+                                                    <div class="form-group">
+                                                        <i class='bx bx-file'></i>
+                                                        <input type="date" formControlName="releaseDate"
+                                                            id="release_date" class="form-control" required
+                                                            data-error="Veuillez saisir la date de réalisation du film"
+                                                            placeholder="Date de réalisation du film">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 ">
+                                                    <div class="form-group">
+                                                        <i class='bx bx-file'></i>
+                                                        <input type="text" formControlName="url" name="url" id="url"
+                                                            class="form-control" required
+                                                            data-error="Veuillez saisir l'URL du film"
+                                                            placeholder="URL du film">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 ">
+                                                    <div class="form-group" style="float: left;">
+                                                        <div class="facilities-list">
+                                                            <h3 class="facilities-title">Vidéo privée ou publique?</h3>
+                                                            <!-- <i class='bx bx-file'></i>
+                                                        <label for="isPrivate" class="form-control" style=""> Veuillez
+                                                            préciser
+                                                            si la vidéo est privée ou publique </label> -->
+                                                            <div style="float: left;">
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" id="isPrivate"
+                                                                        type="radio" value="true"
+                                                                        formControlName="private">
+                                                                    <label class="form-check-label"
+                                                                        for="private">&nbsp;Privée</label>
+                                                                </div>
+                                                                <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" id="isPrivate"
+                                                                        type="radio" value="false"
+                                                                        formControlName="private">
+                                                                    <label class="form-check-label"
+                                                                        for="public">&nbsp;Publique</label>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-12 ">
+                                                    <div class="form-group" style="float: left;">
+                                                        <div class="facilities-list">
+                                                            <h3 class="facilities-title">Catégories</h3>
+                                                            <!-- <i class='bx bx-file'></i>
+                                                            <input type="text" name="url" id="url" class="form-control"
+                                                                required
+                                                                placeholder="Veuillez sélectionner une ou plusieurs catégories"
+                                                                disabled> -->
+
+                                                            <div class="form-check" *ngFor="let category of categories"
+                                                                class="col-md-12">
+                                                                <label class="form-check-label"><input
+                                                                        class="form-check-input"
+                                                                        formArrayName="categories"
+                                                                        (change)="onCheckboxChange($event)"
+                                                                        type="checkbox"
+                                                                        [value]="category.id">&nbsp;&nbsp;{{category.name}}</label>
+                                                            </div>
+                                                        </div>
+
+                                                        <!--<select formControlName="category">
+                                                            <option [ngValue]="null" disabled>Choisissez une
+                                                                catégory
+                                                            </option>
+                                                            <option *ngFor="let category of categories"
+                                                                [ngValue]="category.id">{{
+                                                                category.name }}</option>
+                                                        </select>-->
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 col-md-12 text-center">
+                                                    <button type="submit"
+                                                        class="default-btn  user-all-btn">Ajouter</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
