@@ -35,4 +35,8 @@ export class VideosService {
             this.url + "videosCatégorie/" + ids.join(",")
         );
     }
+
+    deleteVideo(id: number): Observable<any> {
+        return this.http.delete<any>(this.url + "admin/videos/" + id);
+    }
 }

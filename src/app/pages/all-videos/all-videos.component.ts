@@ -33,6 +33,7 @@ export class AllVideosComponent implements OnInit {
     email: string = "";
     firstname: string = "";
     lastname: string = "";
+    MsgSuppression: string = "";
 
     constructor(
         private fb: FormBuilder,
@@ -142,5 +143,11 @@ export class AllVideosComponent implements OnInit {
                     this.videos = result;
                 });
         }
+    }
+
+    deleteVideo(id: any) {
+        this.videoService.deleteVideo(id).subscribe((response) => {
+            this.MsgSuppression = "Le video à été bien supprimer !";
+        });
     }
 }
