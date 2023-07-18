@@ -169,20 +169,22 @@
 
                     <div class="row">
 
+                        <!-- <iframe width="100%" height="250" src="https://www.youtube.com/embed/mQgIn4eE2Zk"></iframe> -->
+
+
 
                         <div class="col-lg-6 col-md-6" *ngFor="let video of videos">
                             <div class="place-list-item">
                                 <div class="images">
+
+
                                     <!-- <a href="{{video.url}}" class="play-btn images-list">
-                                        <img src="{{video.url}}"
-                                            alt="Images">
-                                        </a> -->
+                                        <img src="{{video.url}}" alt="Images">
+                                    </a> -->
 
-                                    <iframe width="100%" height="250" [src]="convertToEmbedLink(video.url)"
-                                        title="YouTube video player" frameborder="0" allowfullscreen allow="accelerometer;"
-                                        loading="lazy"></iframe>
+                                    <video controls autoplay width="100%" height="250" [src]="video.url"></video>
 
-                                    <div class="place-profile" *ngFor="let category of video">
+                                    <div class="place-profile" *ngFor="let category of video.categories">
                                         <h3 class="text-white">{{category.name}}</h3>
                                     </div>
 
@@ -206,9 +208,7 @@
                                     <a href="{{video.url}}" class="play-btn">
                                         <h3>{{video.title}}</h3>
                                     </a>
-                                    <div *ngFor="let category of video.categories">
-                                        <h3 class="text-success">{{category.name}}</h3>
-                                    </div>
+
                                     <p><i class="flaticon-cursor"></i> {{video.description}}</p>
                                     <ul class="place-rating">
                                         <li><a routerLink="/listing">5.0</a></li>
@@ -223,19 +223,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

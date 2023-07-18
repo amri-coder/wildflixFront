@@ -27,6 +27,7 @@ export class AllVideosComponent implements OnInit {
 
     videoUrl: string =
         "https://www.youtube.com/embed/mX_7du3t1GY?list=RDmX_7du3t1GY";
+
     safeVideoUrl: SafeResourceUrl;
 
     email: string = "";

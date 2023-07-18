@@ -59,25 +59,21 @@
             </div>
         </div>
     </div>
-    <!-- <iframe width="727" height="409" src="https://www.youtube.com/embed/mX_7du3t1GY?list=RDmX_7du3t1GY"
-        title="Abeer Nehme - Bi Saraha (Live at Bozar, Belgium) // عبير نعمة - بصراحة - من مسرح البوزار، بلجيكا"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe> -->
+
 
     <div *ngFor="let video of videos" style="max-width: 360px; margin-bottom: 20px;" class="col-sm-6 col-md-4 col-lg-4">
 
         <div class="box">
             <div class="row">
                 <div class="col-md-12">
-                    <!-- <video controls autoplay muted style="width: 100%;">
-                        <source controls [src]="safeVideoUrl" type="video/mp4">
+                    <video controls autoplay muted style="width: 100%;">
+                        <source controls [src]="video.url" type="video/mp4">
                         Votre navigateur ne prend pas en charge la lecture de vidéos HTML5.
-                    </video> -->
+                    </video>
 
-                    <iframe width="300" height="200" [src]="safeVideoUrl" title="YouTube video player" frameborder="0"
+                    <!-- <iframe width="300" height="200" [src]="safeVideoUrl" title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
+                        allowfullscreen></iframe> -->
                 </div>
             </div>
             <div class="row">

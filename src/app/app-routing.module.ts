@@ -88,6 +88,7 @@ const routes: Routes = [
 
     { path: "videos", component: VideosComponent },
     { path: "allVideos", component: AllVideosComponent },
+
     // Here add new pages component
 
     { path: "**", component: ErrorComponent }, // This line will remain down from the whole pages component list
@@ -97,4 +98,4 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
