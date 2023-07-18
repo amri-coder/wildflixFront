@@ -13,14 +13,14 @@ import { VideosService } from "src/app/services/videos.service";
 export class AllVideosComponent implements OnInit {
     errorMsg: String = "";
     categories: Category[];
-    videos: video[] = [];
+    videos: any[] = [];
 
     email: string = "";
     firstname: string = "";
     lastname: string = "";
 
     constructor(
-        private vidéoService: VideosService,
+        private videoService: VideosService,
         private authService: AuthService,
         private router: Router
     ) {}
@@ -37,14 +37,20 @@ export class AllVideosComponent implements OnInit {
     }
 
     getAllVideos(): void {
-        this.vidéoService.getVideos().subscribe(
+        this.videoService.getVideos().subscribe(
             (response) => {
-                if (Array.isArray(response)) {
-                    this.videos = [].concat(...response);
-                } else {
-                    this.videos.push(response);
-                }
-                // console.log("Videos :", this.videos);
+                // if (Array.isArray(response)) {
+                //     this.videos = [].concat(...response);
+                // } else {
+                //     this.videos.push(response);
+                // }
+                // // console.log("Videos :", this.videos);
+                console.log(response);
+                console.log(response[0]);
+                console.log(response.video);
+                console.log(this.videos);
+                this.videos = response;
+                console.log(this.videos);
             },
             (error) => {
                 console.log(
