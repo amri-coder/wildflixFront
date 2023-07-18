@@ -33,3 +33,49 @@ form .accueil {
 form .accueil a {
     color: green !important;
 }
+
+.forgot-password-link {
+    text-decoration: underline;
+    font-size: 16px;
+    text-align: center;
+  }
+  
+  .register-link {
+    color: #545454;
+    font-size: 16px;
+  }
+
+  .register-text {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: #545454;
+    font-size: 16px;
+  }
+  
+  
+  .custom-button {
+    background-color: #f14d16;
+    color: #ffffff;
+    border: none;
+    padding: 8px 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .custom-button:hover {
+    background-color: #d43a0f;
+  }
+
+.retour {
+    color: #545454;
+    font-size: 16px;
+}
+  
+.textdubas {
+text-align: center;
+}
+
+.alert-danger {
+    font-size: 16px;
+  }

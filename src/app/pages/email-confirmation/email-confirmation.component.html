@@ -8,9 +8,9 @@
                     <img src="../../../assets/images/logo.png">
                 </div>
                 <h4 class="text-center">Email Confirmation</h4>
-
+<div class="mailperso">
                 <p>Veuillez entrer le code que vous avez reçu sur : <span class="text-danger">{{email}}</span></p>
-
+            </div>
                 <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg }}</div>
                 <div *ngIf="confirmMsg" class="alert alert-success">{{confirmMsg }}</div>
 

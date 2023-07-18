@@ -42,7 +42,8 @@ import { ListingDetailsComponent } from "./components/pages/listing-details/list
 import { BlogComponent } from "./components/pages/blog/blog.component";
 import { BlogDetailsComponent } from "./components/pages/blog-details/blog-details.component";
 import { ContactComponent } from "./components/pages/contact/contact.component";
-import { VideosComponent } from "./pages/videos/videos.component";
+import { CookieComponent } from './cookie/cookie.component';
+import { VideosComponent } from './pages/videos/videos.component';
 import { NgSelectModule } from "@ng-select/ng-select";
 import { AllVideosComponent } from "./pages/all-videos/all-videos.component";
 import { CategoryComponent } from "./pages/category/category.component";
@@ -85,6 +86,7 @@ import { CategoryComponent } from "./pages/category/category.component";
         BlogComponent,
         BlogDetailsComponent,
         ContactComponent,
+        CookieComponent,
         VideosComponent,
         AllVideosComponent,
     ],

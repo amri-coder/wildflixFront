@@ -5,16 +5,19 @@
 
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="lead">
                 <p class="text-right accueil">
-                    <a routerLink="">Accueil</a>
+                    <a routerLink="" class="retour">Accueil</a>
+
                 </p>
 
                 <div class="text-center mb-3">
-                    <img src="../../../assets/images/logo.png">
+                    <a routerLink="/" class="logo">
+                        <img src="../../../assets/images/logo.png">
+                    </a>
                 </div>
                 <h4 class="text-center">Login</h4>
                 <div *ngIf="errorMsg" class="alert alert-danger">{{errorMsg }}</div>
                 <div class="form-group">
-                    <label class="sr-only" for="email">Email</label>
+                    <label class="sr-only" for="email">E-mail</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text"> <i class="fa fa-envelope fa-2x" aria-hidden="true"></i></div>
@@ -24,7 +27,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label class="sr-only" for="password">Password</label>
+                    <label class="sr-only" for="password">Mot de passe</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text"> <i class="fa fa-key fa-2x" aria-hidden="true"></i></div>
@@ -39,16 +42,25 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-outline-success mt-2">Sign in</button>
-                    <button type="reset" class="btn btn-outline-danger mt-2 mx-2">Cancel</button>
+                    <button type="submit" class="btn btn-outline-success mt-2">Se connecter</button>
+                    <button type="reset" class="btn btn-outline-danger mt-2 mx-2">Annuler</button>
                 </div>
 
-                <p class="text-left pt-4">
-                    <a routerLink="/forgotten-password">Mot de passe oublié !</a>
+            <div class="textdubas">
+                <p class="pt-4">
+                    <a routerLink="/forgotten-password" class="forgot-password-link">
+                        <u>Mot de passe oublié ?</u>
+                    </a>
                 </p>
-                <p class="text-left pt-4">
-                    <a routerLink="/register">Inscription</a>
-                </p>
+        
+                <p class="pt-4 register-text">
+                    Si vous n'avez pas encore de compte utilisateur
+                  </p>
+                  <a routerLink="/register" class="register-link">
+                    <button class="custom-button">Inscrivez-vous ici</button>
+                  </a>
+                  
+            </div>
 
             </form>
 
