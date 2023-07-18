@@ -39,6 +39,9 @@ export class RegisterComponent implements OnInit {
             .register(this.registerForm.value)
             .subscribe((response: any) => {
                 this.router.navigate(["email-confirmation", response.email]);
+            },
+            (error) => {
+                this.errorMsg = error.error.message;
             });
     }
     togglePasswordVisibility() {

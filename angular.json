@@ -135,7 +135,11 @@
           }
         }
       }
+
     }
   },
-  "defaultProject": "wildflixFront"
+  "defaultProject": "wildflixFront",
+  "cli": {
+    "analytics": false
+  }
 }
