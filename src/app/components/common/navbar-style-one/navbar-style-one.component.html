@@ -82,6 +82,15 @@
 
                                 </a></li>
                         </span>
+
+                        <span *ngIf="isAdmin">
+                            <li class="nav-item"><a routerLink="/listing" class="nav-link" routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact: true}">
+
+                                    Admin
+
+                                </a></li>
+                        </span>
                         <!--
                         <li class="nav-item">
                             <a href="javascript:void(0)" class="nav-link">Listing <i class='bx bx-plus'></i></a>
