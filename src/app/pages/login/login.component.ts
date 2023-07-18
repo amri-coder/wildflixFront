@@ -16,8 +16,8 @@ export class LoginComponent implements OnInit {
         private fb: FormBuilder,
         private authService: AuthService,
         private router: Router
-    ) { }
-    ngOnInit(): void { }
+    ) {}
+    ngOnInit(): void {}
 
     loginForm: FormGroup = this.fb.group({
         email: ["", [Validators.required]],
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
                 this.authService.setFirstname(reponse.user.firstname);
                 this.authService.setLastname(reponse.user.lastname);
                 this.router.navigate(["listing"]);
-                console.log("login role: " + reponse.user.roles[0].name);
+                // console.log("login role: " + reponse.user.roles[0].name);
             },
             (error) => {
                 this.errorMsg = error.error.message;
