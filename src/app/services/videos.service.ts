@@ -27,4 +27,5 @@ export class VideosService {
   getCategories(): Observable<Category[]> {
     return this.http.get<Category[]>(this.url + 'categories');
   }
+
 }
