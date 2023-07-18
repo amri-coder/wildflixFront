@@ -147,6 +147,19 @@ export class ListingComponent implements OnInit {
         });
     }
 
+    // onFilterVideos(): void {
+    //     const categories: number[] = this.allVideoForm.value.categories;
+
+    //     if (categories.length > 0) {
+    //         this.videoService
+    //             .getVideosByCategories(categories)
+    //             .subscribe((result: video[]) => {
+    //                 console.log("result:", result);
+    //                 this.videos = result;
+    //             });
+    //     }
+    // }
+
     getAllVideos(): void {
         this.videoService.getVideos().subscribe(
             (response) => {

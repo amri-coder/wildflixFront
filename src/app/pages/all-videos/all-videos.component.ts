@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import {
     FormArray,
     FormBuilder,
@@ -145,9 +145,15 @@ export class AllVideosComponent implements OnInit {
         }
     }
 
+    // refreshPage() {
+    //     window.location.reload(); // Actualise la page actuelle
+    // }
+
     deleteVideo(id: any) {
         this.videoService.deleteVideo(id).subscribe((response) => {
             this.MsgSuppression = "Le video à été bien supprimer !";
+            window.location.reload();
+            //this.router.navigate(["/listing"]);
         });
     }
 }
