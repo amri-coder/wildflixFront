@@ -13,72 +13,6 @@ import { Router } from "@angular/router";
     styleUrls: ["./listing.component.scss"],
 })
 export class ListingComponent implements OnInit {
-    //     email: string = "";
-    //     firstname: string = "";
-    //     lastname: string = "";
-    //     videos: video[] = [];
-    //     categories: Category[];
-    //     url: SafeResourceUrl;
-    //     videoUrl: string = "";
-    //     constructor(
-    //         private authService: AuthService,
-    //         private videoService: VideosService,
-    //         private sanitizer: DomSanitizer
-    //     ) {
-    //         this.url = this.convertToEmbedLink(this.videoUrl);
-    //     }
-
-    //     ngOnInit(): void {
-    //         this.getAllVideos();
-    //         this.authService.userMe().subscribe((response) => {
-    //             this.email = response.email;
-    //             this.firstname = response.firstname;
-    //             this.lastname = response.lastname;
-    //         });
-    //     }
-
-    //     getAllVideos(): void {
-    //         this.videoService.getVideos().subscribe(
-    //             (response) => {
-    //                 // if (Array.isArray(response)) {
-    //                 //     this.videos = [].concat(...response);
-    //                 // } else {
-    //                 //     this.videos.push(response);
-    //                 // }
-    //                 // console.log("Videos :", this.videos);
-    //                 this.videos = response.videos;
-    //                 console.log("this.videos " + this.videos);
-    //                 console.log("response " + response);
-    //             },
-    //             (error) => {
-    //                 console.log(
-    //                     "Erreur lors de la récupération des vidéos :",
-    //                     error
-    //                 );
-    //             }
-    //         );
-    //     }
-
-    //     convertToEmbedLink(url: string): SafeResourceUrl {
-    //         // const videoId = this.extractVideoId(url);
-    //         // if (videoId) {
-    //         //     const sanitizedUrl = `https://www.youtube.com/embed/${videoId}`;
-    //         //     return this.sanitizer.bypassSecurityTrustResourceUrl(sanitizedUrl);
-    //         return this.sanitizer.bypassSecurityTrustResourceUrl(url);
-    //         // }
-    //         // return "";
-    //     }
-
-    //     extractVideoId(url: string): string | null {
-    //         const regex = /[?&]v=([^&#]*)/;
-    //         const match = url.match(regex);
-    //         if (match) {
-    //             return match[1];
-    //         }
-    //         return null;
-    //     }
-    // }
-
     errorMsg: String = "";
     isChecked: boolean = false;
     categories: Category[];
@@ -100,45 +34,15 @@ export class ListingComponent implements OnInit {
         private router: Router,
         private domSanitizer: DomSanitizer
     ) {
-        // this.fetchCategories();
-        // this.allVideoForm = this.fb.group({
-        //     categories: new FormArray([]),
-        // });
         this.safeVideoUrl = this.convertUrlToSafeRessource(this.videoUrl);
     }
 
-    // fetchCategories(): void {
-    //     this.videoService.getCategories().subscribe(
-    //         (categories) => {
-    //             this.categories = categories;
-    //             this.allVideoForm.patchValue({ categories: null });
-    //         },
-    //         (error) => {
-    //             console.log(
-    //                 "Erreur lors de la récupération des catégories :",
-    //                 error
-    //             );
-    //         }
-    //     );
-    // }
-
-    // allVideoForm: FormGroup = this.fb.group({
-    //     title: ["", [Validators.required]],
-    //     description: ["", [Validators.required]],
-    //     url: ["", [Validators.required]],
-    //     releaseDate: ["", [Validators.required]],
-    //     categories: new FormArray([]),
-    //     private: [false, [Validators.required]],
-    // });
-
     convertUrlToSafeRessource(url: string): SafeResourceUrl {
         return this.domSanitizer.bypassSecurityTrustResourceUrl(url);
-        console.log(url);
     }
 
     ngOnInit(): void {
         this.getAllVideos();
-        //console.log(this.getAllVideos());
 
         this.authService.userMe().subscribe((response) => {
             this.email = response.email;
@@ -146,19 +50,6 @@ export class ListingComponent implements OnInit {
             this.lastname = response.lastname;
         });
     }
-
-    // onFilterVideos(): void {
-    //     const categories: number[] = this.allVideoForm.value.categories;
-
-    //     if (categories.length > 0) {
-    //         this.videoService
-    //             .getVideosByCategories(categories)
-    //             .subscribe((result: video[]) => {
-    //                 console.log("result:", result);
-    //                 this.videos = result;
-    //             });
-    //     }
-    // }
 
     getAllVideos(): void {
         this.videoService.getVideos().subscribe(
@@ -169,9 +60,6 @@ export class ListingComponent implements OnInit {
                 } else {
                     this.videos.push(response);
                 }
-                // console.log("cocuc" + JSON.stringify(response));
-                // this.videos = response.videos;
-                // console.log("Videos :", this.videos);
             },
             (error) => {
                 console.log(
@@ -181,41 +69,4 @@ export class ListingComponent implements OnInit {
             }
         );
     }
-
-    // Onclick() {
-    //     this.authService.logout();
-    //     this.router.navigate([""]);
-    // }
-    // goToLoginRegister() {
-    //     this.router.navigate(["/login-register"]);
-    // }
-
-    // onCheckboxChange(event: any): void {
-    //     const categories: FormArray = this.allVideoForm.get(
-    //         "categories"
-    //     ) as FormArray;
-
-    //     if (event.target.checked) {
-    //         categories.push(new FormControl(+event.target.value));
-    //         console.log("Categories: " + categories.value);
-    //     } else {
-    //         const index = categories.controls.findIndex(
-    //             (x) => x.value === +event.target.value
-    //         );
-    //         categories.removeAt(index);
-    //     }
-    // }
-
-    // onFilterVideos(): void {
-    //     const categories: number[] = this.allVideoForm.value.categories;
-
-    //     if (categories.length > 0) {
-    //         this.videoService
-    //             .getVideosByCategories(categories)
-    //             .subscribe((result: video[]) => {
-    //                 console.log("result:", result);
-    //                 this.videos = result;
-    //             });
-    //     }
-    // }
 }
