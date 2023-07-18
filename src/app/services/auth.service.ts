@@ -1,86 +1,100 @@
-import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { environment } from '../environments/environment';
-import { Observable } from 'rxjs';
+import { HttpClient, HttpResponse } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { environment } from "../environments/environment";
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: "root",
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient) {}
 
-  url = environment.apiUrl;
+    url = environment.apiUrl;
 
-  setJwt(jwt: string) {
-    localStorage.setItem('jwt', jwt);
-  }
-  getJwt() {
-    return localStorage.getItem('jwt') || '';
-  }
+    setJwt(jwt: string) {
+        localStorage.setItem("jwt", jwt);
+    }
+    getJwt() {
+        return localStorage.getItem("jwt") || "";
+    }
 
-  setEmail(email: string) {
-    localStorage.setItem('email', email);
-  }
-  getEmail() {
-    return localStorage.getItem('email') || '';
-  }
+    setEmail(email: string) {
+        localStorage.setItem("email", email);
+    }
+    getEmail() {
+        return localStorage.getItem("email") || "";
+    }
 
-  setRoles(roles: any) {
-    localStorage.setItem('roles', roles);
-  }
-  getRoles() {
-    return localStorage.getItem('roles');
-  }
+    setRoles(roles: any) {
+        localStorage.setItem("roles", roles);
+    }
+    getRoles() {
+        return localStorage.getItem("roles");
+    }
 
-  getFirstname() {
-    return localStorage.getItem('firstname') || '';
-  }
-  setFirstname(firstname: string) {
-    localStorage.setItem('firstname', firstname);
-  }
+    getFirstname() {
+        return localStorage.getItem("firstname") || "";
+    }
+    setFirstname(firstname: string) {
+        localStorage.setItem("firstname", firstname);
+    }
 
-  getLastname() {
-    return localStorage.getItem('lastname') || '';
-  }
-  setLastname(lastname: string) {
-    localStorage.setItem('lastname', lastname);
-  }
+    getLastname() {
+        return localStorage.getItem("lastname") || "";
+    }
+    setLastname(lastname: string) {
+        localStorage.setItem("lastname", lastname);
+    }
 
-  logout() {
-    localStorage.removeItem('jwt');
-    localStorage.removeItem('email');
-    localStorage.removeItem('roles');
-    localStorage.removeItem('firstname');
-    localStorage.removeItem('lastname');
-  }
+    logout() {
+        localStorage.removeItem("jwt");
+        localStorage.removeItem("email");
+        localStorage.removeItem("roles");
+        localStorage.removeItem("firstname");
+        localStorage.removeItem("lastname");
+    }
 
-  login(body: any): Observable<HttpResponse<any>> {
-    return this.http.post<any>(this.url + 'auth/login', body);
-  }
+    login(body: any): Observable<HttpResponse<any>> {
+        return this.http.post<any>(this.url + "auth/login", body);
+    }
 
-  userMe(): Observable<any> {
-    return this.http.get<any>(this.url + 'users/me');
-  }
+    userMe(): Observable<any> {
+        return this.http.get<any>(this.url + "users/me");
+    }
 
-  resetPasswordRequest(body: any): Observable<any> {
-    return this.http.post<any>(this.url + 'auth/reset-password-request', body);
-  }
+    resetPasswordRequest(body: any): Observable<any> {
+        return this.http.post<any>(
+            this.url + "auth/reset-password-request",
+            body
+        );
+    }
 
-  register(body: any): Observable<HttpResponse<any>> {
-    return this.http.post<any>(this.url + 'auth/sign-up-user', body);
-  }
-  registerAdmin(body: any): Observable<HttpResponse<any>> {
-    return this.http.post<any>(this.url + 'auth/sign-up-admin', body);
-  }
+    register(body: any): Observable<HttpResponse<any>> {
+        return this.http.post<any>(this.url + "auth/sign-up-user", body);
+    }
+    registerAdmin(body: any): Observable<HttpResponse<any>> {
+        return this.http.post<any>(this.url + "auth/sign-up-admin", body);
+    }
 
-  verifyEmail(body: any, email: string): Observable<any> {
-    return this.http.post<any>(
-      this.url + 'auth/email-confirmation/' + email,
-      body
-    );
-  }
+    verifyEmail(body: any, email: string): Observable<any> {
+        return this.http.post<any>(
+            this.url + "auth/email-confirmation/" + email,
+            body
+        );
+    }
 
-  resetPassword(body: any): Observable<any> {
-    return this.http.put<any>(this.url + 'auth/reset-password', body);
-  }
+    resetPassword(body: any): Observable<any> {
+        return this.http.put<any>(this.url + "auth/reset-password", body);
+    }
+
+    sendContactForm(body: any): Observable<any> {
+        return this.http.post(this.url + "api/contact", body);
+    }
+
+    addVideoToFavorite(body: any): Observable<any> {
+        return this.http.post(this.url + "users/addVideoToFavorite", body);
+    }
+    removeVideoFRomFavorite(body: any): Observable<any> {
+        return this.http.post(this.url + "users/removeVideoFromFavorite", body);
+    }
 }

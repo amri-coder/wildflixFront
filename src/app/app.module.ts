@@ -26,7 +26,6 @@ import { FooterStyleTwoComponent } from "./components/common/footer-style-two/fo
 import { AboutComponent } from "./components/pages/about/about.component";
 import { TeamComponent } from "./components/pages/team/team.component";
 import { PricingComponent } from "./components/pages/pricing/pricing.component";
-import { CategoryComponent } from "./components/pages/category/category.component";
 import { FaqComponent } from "./components/pages/faq/faq.component";
 import { TestimonialsComponent } from "./components/pages/testimonials/testimonials.component";
 import { ErrorComponent } from "./components/pages/error/error.component";
@@ -43,6 +42,10 @@ import { ListingDetailsComponent } from "./components/pages/listing-details/list
 import { BlogComponent } from "./components/pages/blog/blog.component";
 import { BlogDetailsComponent } from "./components/pages/blog-details/blog-details.component";
 import { ContactComponent } from "./components/pages/contact/contact.component";
+import { VideosComponent } from './pages/videos/videos.component';
+import { NgSelectModule } from "@ng-select/ng-select";
+import { AllVideosComponent } from './pages/all-videos/all-videos.component';
+import { CategoryComponent } from "./pages/category/category.component";
 
 @NgModule({
     declarations: [
@@ -82,6 +85,8 @@ import { ContactComponent } from "./components/pages/contact/contact.component";
         BlogComponent,
         BlogDetailsComponent,
         ContactComponent,
+        VideosComponent,
+        AllVideosComponent,
     ],
     imports: [
         BrowserModule,
@@ -90,10 +95,11 @@ import { ContactComponent } from "./components/pages/contact/contact.component";
         RouterModule,
         HttpClientModule,
         FontAwesomeModule,
+        NgSelectModule
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     ],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

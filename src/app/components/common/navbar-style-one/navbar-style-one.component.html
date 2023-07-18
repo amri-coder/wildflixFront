@@ -10,7 +10,8 @@
 
                 <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                     <ul class="navbar-nav m-auto">
-                        <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">bienvenue à wildflix </a></li>
+                        <li class="nav-item"><a routerLink="/" class="nav-link" routerLinkActive="active"
+                                [routerLinkActiveOptions]="{exact: true}">bienvenue à wildflix </a></li>
                         <!--
                         <li class="nav-item">
                             <a href="javascript:void(0)" class="nav-link">Accueil <i class='bx bx-plus'></i></a>
@@ -64,7 +65,23 @@
                             </ul>
                         </li>
                         -->
-                        <li class="nav-item"><a routerLink="/listing" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">espace abonné</a></li>
+                        <span *ngIf="!firstname">
+                            <li class="nav-item"><a routerLink="login" class="nav-link" routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact: true}">
+
+                                    espace abonné
+
+                                </a></li>
+                        </span>
+
+                        <span *ngIf="firstname">
+                            <li class="nav-item"><a routerLink="/listing" class="nav-link" routerLinkActive="active"
+                                    [routerLinkActiveOptions]="{exact: true}">
+
+                                    espace abonné
+
+                                </a></li>
+                        </span>
                         <!--
                         <li class="nav-item">
                             <a href="javascript:void(0)" class="nav-link">Listing <i class='bx bx-plus'></i></a>
@@ -85,7 +102,7 @@
                             </ul>
                         </li>
                         -->
-                        <li class="nav-item"><a routerLink="/contact" class="nav-link">contacter nous</a></li>
+                        <li class="nav-item"><a routerLink="/contact" class="nav-link">Contactez-nous</a></li>
                     </ul>
 
                     <div class="side-nav d-in-line align-items-center">
@@ -101,7 +118,20 @@
                         -->
                         <div class="side-item">
                             <div class="nav-add-btn">
-                                <a routerLink="/login-register" class="default-btn border-radius" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">connexion <i class='bx bx-plus'></i></a>
+                                <span *ngIf="firstname">
+                                    <span (click)="Onclick();">
+                                        <a class="default-btn border-radius" routerLinkActive="active"
+                                            [routerLinkActiveOptions]="{exact: true}">
+                                            Déconnexion
+                                        </a>
+                                    </span>
+                                </span>
+                                <span *ngIf="!firstname || !lastname || !email">
+                                    <a routerLink="/login" class="default-btn border-radius" routerLinkActive="active"
+                                        [routerLinkActiveOptions]="{exact: true}">
+                                        Connexion
+                                    </a>
+                                </span>
                             </div>
                         </div>
 
@@ -153,12 +183,14 @@
                         <div class="side-item">
                             <div class="user-btn">
                                 <a routerLink="/"><i class="flaticon-contact"></i></a>
+
                             </div>
                         </div>
 
                         <div class="side-item">
                             <div class="nav-add-btn">
-                                <a routerLink="/" class="default-btn border-radius">Add Listing <i class='bx bx-plus'></i></a>
+                                <a routerLink="/" class="default-btn border-radius">Add Listing <i
+                                        class='bx bx-plus'></i></a>
                             </div>
                         </div>
                     </div>

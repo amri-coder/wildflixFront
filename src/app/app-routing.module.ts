@@ -1,7 +1,6 @@
 import { NgModule } from "@angular/core";
 import { LoginComponent } from "./pages/login/login.component";
 import { RegisterComponent } from "./pages/register/register.component";
-import { HomeComponent } from "./pages/home/home.component";
 import { EmailConfirmationComponent } from "./pages/email-confirmation/email-confirmation.component";
 import { ResetPasswordComponent } from "./pages/reset-password/reset-password.component";
 import { ResetPasswordRequestComponent } from "./pages/reset-password-request/reset-password-request.component";
@@ -13,7 +12,6 @@ import { HomeThreeComponent } from "./components/pages/home-three/home-three.com
 import { AboutComponent } from "./components/pages/about/about.component";
 import { TeamComponent } from "./components/pages/team/team.component";
 import { PricingComponent } from "./components/pages/pricing/pricing.component";
-import { CategoryComponent } from "./components/pages/category/category.component";
 import { ShopComponent } from "./components/pages/shop/shop.component";
 import { CartComponent } from "./components/pages/cart/cart.component";
 import { CheckoutComponent } from "./components/pages/checkout/checkout.component";
@@ -30,6 +28,9 @@ import { ListingDetailsComponent } from "./components/pages/listing-details/list
 import { BlogComponent } from "./components/pages/blog/blog.component";
 import { BlogDetailsComponent } from "./components/pages/blog-details/blog-details.component";
 import { ContactComponent } from "./components/pages/contact/contact.component";
+import { VideosComponent } from "./pages/videos/videos.component";
+import { AllVideosComponent } from "./pages/all-videos/all-videos.component";
+import { CategoryComponent } from "./pages/category/category.component";
 
 const routes: Routes = [
     { path: "", component: HomeOneComponent },
@@ -82,12 +83,11 @@ const routes: Routes = [
     },
     {
         path: "home",
-        component: HomeComponent,
+        component: HomeOneComponent,
     },
-    {
-        path: "**",
-        component: HomeComponent,
-    },
+
+    { path: "videos", component: VideosComponent },
+    { path: "allVideos", component: AllVideosComponent },
     // Here add new pages component
 
     { path: "**", component: ErrorComponent }, // This line will remain down from the whole pages component list
@@ -97,4 +97,4 @@ const routes: Routes = [
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
