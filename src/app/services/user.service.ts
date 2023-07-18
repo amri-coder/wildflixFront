@@ -14,11 +14,14 @@ export class UserService {
   constructor(private http : HttpClient) { }
 
   addToFavorites(videoId: number): Observable<any> {
-    return this.http.post<any>(`${this.url}/videos/${videoId}/favorites`, {});
-  }
+    return this.http.post<any>(`${this.url}users/addVideoToFavorite`, {
+      idVideo: videoId
+    });
+  } 
+
 
   removeFromFavorites(videoId: number): Observable<any> {
-    return this.http.delete<any>(`${this.url}/videos/${videoId}/favorites`);
+    return this.http.delete<any>(`${this.url}users/removeVideoFromFavorite`);
   }
 
 }
