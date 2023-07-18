@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import {
     FormArray,
     FormBuilder,
@@ -27,11 +27,13 @@ export class AllVideosComponent implements OnInit {
 
     videoUrl: string =
         "https://www.youtube.com/embed/mX_7du3t1GY?list=RDmX_7du3t1GY";
+
     safeVideoUrl: SafeResourceUrl;
 
     email: string = "";
     firstname: string = "";
     lastname: string = "";
+    MsgSuppression: string = "";
 
     constructor(
         private fb: FormBuilder,
@@ -141,5 +143,17 @@ export class AllVideosComponent implements OnInit {
                     this.videos = result;
                 });
         }
+    }
+
+    // refreshPage() {
+    //     window.location.reload(); // Actualise la page actuelle
+    // }
+
+    deleteVideo(id: any) {
+        this.videoService.deleteVideo(id).subscribe((response) => {
+            this.MsgSuppression = "Le video à été bien supprimer !";
+            window.location.reload();
+            //this.router.navigate(["/listing"]);
+        });
     }
 }

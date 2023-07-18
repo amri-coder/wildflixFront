@@ -45,7 +45,7 @@ import { ContactComponent } from "./components/pages/contact/contact.component";
 import { CookieComponent } from './cookie/cookie.component';
 import { VideosComponent } from './pages/videos/videos.component';
 import { NgSelectModule } from "@ng-select/ng-select";
-import { AllVideosComponent } from './pages/all-videos/all-videos.component';
+import { AllVideosComponent } from "./pages/all-videos/all-videos.component";
 import { CategoryComponent } from "./pages/category/category.component";
 
 @NgModule({
@@ -97,11 +97,11 @@ import { CategoryComponent } from "./pages/category/category.component";
         RouterModule,
         HttpClientModule,
         FontAwesomeModule,
-        NgSelectModule
+        NgSelectModule,
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     ],
     bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
