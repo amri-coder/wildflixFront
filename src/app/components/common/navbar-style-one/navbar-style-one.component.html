@@ -83,34 +83,49 @@
                                 </a></li>
                         </span>
 
-                        <span *ngIf="isAdmin">
-                            <li class="nav-item"><a routerLink="/listing" class="nav-link" routerLinkActive="active"
+                        <!-- <span *ngIf="isAdmin">
+                            <li class="nav-item">
+                                <a routerLink="/listing" class="nav-link" routerLinkActive="active"
                                     [routerLinkActiveOptions]="{exact: true}">
-
                                     Admin
+                                </a>
+                            </li>
 
-                                </a></li>
-                        </span>
-                        <!--
-                        <li class="nav-item">
-                            <a href="javascript:void(0)" class="nav-link">Listing <i class='bx bx-plus'></i></a>
+
+                        </span> -->
+
+
+                        <li class="nav-item" *ngIf="isAdmin">
+                            <a href="javascript:void(0)" class="nav-link adminNavbar">Admin <i
+                                    class='bx bx-plus'></i></a>
 
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a routerLink="/listing" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Listing</a></li>
+                                <li class="nav-item"><a routerLink="/category" class="nav-link"
+                                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Ajouter une
+                                        catégorie</a></li>
 
-                                <li class="nav-item"><a routerLink="/listing-details" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Listing Details</a></li>
+                                <li class="nav-item"><a routerLink="/videos" class="nav-link" routerLinkActive="active"
+                                        [routerLinkActiveOptions]="{exact: true}">Ajouter une
+                                        vidéo</a></li>
+
+                                <li class="nav-item"><a routerLink="/allVideos" class="nav-link"
+                                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Afficher
+                                        tout les videos</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
+                        <!-- <li class="nav-item">
                             <a href="javascript:void(0)" class="nav-link">Blog <i class='bx bx-plus'></i></a>
 
                             <ul class="dropdown-menu">
-                                <li class="nav-item"><a routerLink="/blog" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Blog</a></li>
+                                <li class="nav-item"><a routerLink="/blog" class="nav-link" routerLinkActive="active"
+                                        [routerLinkActiveOptions]="{exact: true}">Blog</a></li>
 
-                                <li class="nav-item"><a routerLink="/blog-details" class="nav-link" routerLinkActive="active"[routerLinkActiveOptions]="{exact: true}">Blog Details</a></li>
+                                <li class="nav-item"><a routerLink="/blog-details" class="nav-link"
+                                        routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Blog
+                                        Details</a></li>
                             </ul>
-                        </li>
-                        -->
+                        </li> -->
+
                         <li class="nav-item"><a routerLink="/contact" class="nav-link">Contactez-nous</a></li>
                     </ul>
 
