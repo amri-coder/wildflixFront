@@ -126,6 +126,9 @@
                             </ul>
                         </li> -->
 
+                        <li class="nav-item" *ngIf="isAdmin || firstname"><a routerLink="/allVideos"
+                                class="nav-link">Toutes les vidéos</a></li>
+
                         <li class="nav-item"><a routerLink="/contact" class="nav-link">Contactez-nous</a></li>
                     </ul>
 
@@ -165,9 +168,16 @@
                             </div>
                         </div>
 
-                        <div class="side-item">
+                        <div class="side-item" *ngIf="firstname">
                             <div class="user-btn">
-                                <a routerLink="/listing"><i class="flaticon-contact"></i></a>
+
+
+                                <li class="nav-item"><a routerLink="/profil" class="nav-link" routerLinkActive="active"
+                                        [routerLinkActiveOptions]="{exact: true}">
+
+                                        <i class="flaticon-contact"></i>
+
+                                    </a></li>
                             </div>
                         </div>
                     </div>

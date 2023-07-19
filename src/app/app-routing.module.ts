@@ -31,6 +31,7 @@ import { ContactComponent } from "./components/pages/contact/contact.component";
 import { VideosComponent } from "./pages/videos/videos.component";
 import { AllVideosComponent } from "./pages/all-videos/all-videos.component";
 import { CategoryComponent } from "./pages/category/category.component";
+import { ProfilComponent } from "./profil/profil.component";
 
 const routes: Routes = [
     { path: "", component: HomeOneComponent },
@@ -88,6 +89,7 @@ const routes: Routes = [
 
     { path: "videos", component: VideosComponent },
     { path: "allVideos", component: AllVideosComponent },
+    { path: "profil", component: ProfilComponent },
 
     // Here add new pages component
 
